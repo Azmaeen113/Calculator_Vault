@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.calculator_vault_final.controller.VaultController">
+	<padding>
+		<Insets top="10" right="10" bottom="10" left="10" />
+	</padding>
+	<top>
+		<Label text="Secure Vault" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+	</top>
+	<center>
+		<TableView fx:id="table">
+			<columns>
+				<TableColumn fx:id="colName" text="File Name" prefWidth="200" />
+				<TableColumn fx:id="colType" text="Type" prefWidth="100" />
+				<TableColumn fx:id="colSize" text="Size" prefWidth="120" />
+				<TableColumn fx:id="colDate" text="Date Added" prefWidth="160" />
+			</columns>
+		</TableView>
+	</center>
+	<bottom>
+		<HBox spacing="10" alignment="CENTER_RIGHT">
+			<Button fx:id="btnUpload" text="Upload File" onAction="#onUpload" />
+			<Button fx:id="btnOpen" text="Open Selected" onAction="#onOpenSelected" disable="true"/>
+			<Button fx:id="btnDownload" text="Download Selected" onAction="#onDownloadSelected" disable="true"/>
+			<Button fx:id="btnDelete" text="Delete Selected" onAction="#onDeleteSelected" disable="true"/>
+			<Button fx:id="btnChangePin" text="Change PIN" onAction="#onChangePin" />
+			<Button fx:id="btnLock" text="Lock Vault" onAction="#onLockVault" />
+		</HBox>
+	</bottom>
+</BorderPane>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator_vault_final.controller.CalculatorController">
+	<padding>
+		<Insets bottom="10" left="10" right="10" top="10" />
+	</padding>
+	<TextField fx:id="display" alignment="CENTER_RIGHT" editable="false" style="-fx-font-size: 24px;" />
+	<GridPane hgap="10" vgap="10">
+		<columnConstraints>
+			<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+			<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+			<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+			<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+		</columnConstraints>
+		<rowConstraints>
+			<RowConstraints vgrow="SOMETIMES" />
+			<RowConstraints vgrow="SOMETIMES" />
+			<RowConstraints vgrow="SOMETIMES" />
+			<RowConstraints vgrow="SOMETIMES" />
+		</rowConstraints>
+
+		<!-- Row 1 -->
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="7" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="8" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="9" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+		<Button minHeight="60" minWidth="80" onAction="#onOperator" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+		<!-- Row 2 -->
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="4" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+		<Button minHeight="60" minWidth="80" onAction="#onOperator" text="×" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+		<!-- Row 3 -->
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+		<Button minHeight="60" minWidth="80" onAction="#onOperator" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+		<!-- Row 4 -->
+		<Button minHeight="60" minWidth="80" onAction="#onClear" text="C" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+		<Button minHeight="60" minWidth="80" onAction="#onNumber" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+		<Button minHeight="60" minWidth="80" onAction="#onEquals" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+		<Button minHeight="60" minWidth="80" onAction="#onOperator" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+	</GridPane>
+</VBox>

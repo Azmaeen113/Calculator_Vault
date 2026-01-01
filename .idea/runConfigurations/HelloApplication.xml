@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="HelloApplication" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.example.calculator_vault_final.HelloApplication" />
+    <module name="Calculator_Vault_Final" />
+    <option name="VM_PARAMETERS" value="--module-path C:\Users\sajin\.m2\repository\org\openjfx\javafx-controls\21.0.6;C:\Users\sajin\.m2\repository\org\openjfx\javafx-fxml\21.0.6;C:\Users\sajin\.m2\repository\org\openjfx\javafx-graphics\21.0.6;C:\Users\sajin\.m2\repository\org\openjfx\javafx-base\21.0.6 --add-modules javafx.controls,javafx.fxml,javafx.graphics" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
+
