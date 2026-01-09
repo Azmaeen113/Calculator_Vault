@@ -65,6 +65,13 @@ public class DatabaseManager {
 							"file_size LONG, " +
 							"uploaded_at TIMESTAMP"
 							+ ")");
+
+					stmt.executeUpdate("CREATE TABLE IF NOT EXISTS calculation_history (" +
+							"id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+							"expression TEXT, " +
+							"result TEXT, " +
+							"calculated_at TIMESTAMP"
+							+ ")");
 				}
 
 				// Seed config row if empty
@@ -202,6 +209,50 @@ public class DatabaseManager {
 			} finally {
 				conn.setAutoCommit(true);
 			}
+		}
+	}
+
+	public void saveCalculation(String expression, String result) throws SQLException {
+		try (Connection conn = DriverManager.getConnection(JDBC_URL);
+			 PreparedStatement ps = conn.prepareStatement(
+					 "INSERT INTO calculation_history (expression, result, calculated_at) VALUES (?, ?, ?)")) {
+			ps.setString(1, expression);
+			ps.setString(2, result);
+			ps.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+			ps.executeUpdate();
+		}
+	}
+
+	public List<String[]> getCalculationHistory() throws SQLException {
+		List<String[]> history = new ArrayList<>();
+		try (Connection conn = DriverManager.getConnection(JDBC_URL);
+			 PreparedStatement ps = conn.prepareStatement(
+					 "SELECT id, expression, result, calculated_at FROM calculation_history ORDER BY calculated_at DESC")) {
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String[] entry = new String[4];
+				entry[0] = String.valueOf(rs.getInt("id"));
+				entry[1] = rs.getString("expression");
+				entry[2] = rs.getString("result");
+				entry[3] = rs.getTimestamp("calculated_at").toString();
+				history.add(entry);
+			}
+		}
+		return history;
+	}
+
+	public void deleteCalculation(int id) throws SQLException {
+		try (Connection conn = DriverManager.getConnection(JDBC_URL);
+			 PreparedStatement ps = conn.prepareStatement("DELETE FROM calculation_history WHERE id = ?")) {
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		}
+	}
+
+	public void clearAllHistory() throws SQLException {
+		try (Connection conn = DriverManager.getConnection(JDBC_URL);
+			 Statement stmt = conn.createStatement()) {
+			stmt.executeUpdate("DELETE FROM calculation_history");
 		}
 	}
 }

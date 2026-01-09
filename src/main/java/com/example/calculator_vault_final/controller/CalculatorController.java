@@ -65,7 +65,15 @@ public class CalculatorController {
 				case "÷": case "/": result = CalculatorService.divide(firstOperand, second); break;
 				default: return;
 			}
-			currentInput = formatNumber(result);
+			
+			// Save to history
+			String expression = formatNumber(firstOperand) + " " + operator + " " + formatNumber(second);
+			String resultStr = formatNumber(result);
+			try {
+				db.saveCalculation(expression, resultStr);
+			} catch (Exception ignored) {}
+			
+			currentInput = resultStr;
 			display.setText(currentInput);
 			firstOperand = null;
 			operator = null;
@@ -83,6 +91,20 @@ public class CalculatorController {
 		firstOperand = null;
 		operator = null;
 		display.setText("");
+	}
+
+	@FXML
+	public void onHistory() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/calculator_vault_final/history-view.fxml"));
+			Parent root = loader.load();
+			Stage stage = (Stage) display.getScene().getWindow();
+			stage.setTitle("Calculation History");
+			stage.setScene(new Scene(root, 750, 500));
+		} catch (IOException e) {
+			Alert a = new Alert(Alert.AlertType.ERROR, "Failed to open history view");
+			a.showAndWait();
+		}
 	}
 
 	private void checkSecretTrigger() {

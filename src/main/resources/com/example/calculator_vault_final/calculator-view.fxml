@@ -47,4 +47,7 @@
 		<Button minHeight="60" minWidth="80" onAction="#onEquals" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3" />
 		<Button minHeight="60" minWidth="80" onAction="#onOperator" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
 	</GridPane>
+	
+	<!-- History Button -->
+	<Button maxWidth="Infinity" minHeight="40" onAction="#onHistory" style="-fx-font-size: 14px;" text="History" />
 </VBox>
