@@ -45,6 +45,7 @@ public class HistoryController {
 			private final Button deleteBtn = new Button("Delete");
 
 			{
+				deleteBtn.setMaxWidth(Double.MAX_VALUE);
 				deleteBtn.setOnAction(event -> {
 					HistoryEntry entry = getTableView().getItems().get(getIndex());
 					deleteEntry(entry);
@@ -61,6 +62,9 @@ public class HistoryController {
 				}
 			}
 		});
+		
+		// Set table placeholder
+		historyTable.setPlaceholder(new Label("No calculation history yet"));
 	}
 
 	private void loadHistory() {

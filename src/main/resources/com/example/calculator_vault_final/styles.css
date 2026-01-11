@@ -1,0 +1,619 @@
+/* ===============================================
+   CALCULATOR VAULT - DESKTOP APP STYLES
+   Based on CSS Style Guide
+   =============================================== */
+
+/* COLOR VARIABLES REFERENCE (JavaFX doesn't support CSS custom properties, included as comments)
+   
+   CALCULATOR COLORS:
+   --calculator-background: #1C1C1C
+   --display-text: #FFFFFF
+   --button-number: #333333
+   --button-operator: #FF9800 (Orange - for +, -, ×, ÷)
+   --button-function: #505050 (Gray - for √, x², %, (, ), ±, ⌫)
+   --button-clear: #FF5252 (Red - for C)
+   --button-equals: #4CAF50 (Green - for =)
+   
+   VAULT COLORS:
+   --vault-background: #1A1A2E
+   --vault-card-background: #16213E
+   --vault-text-primary: #FFFFFF
+   --vault-text-secondary: #B8B8D1
+   --vault-accent: #00D9FF (Cyan)
+   --vault-toolbar: #0F3460
+   --vault-button: #533483 (Purple)
+   
+   HISTORY COLORS:
+   --history-background: #1C1C1C
+   --history-toolbar: #505050
+   --history-card: #333333
+   --history-result-text: #4CAF50 (Green)
+   --history-delete-icon: #FF5252 (Red)
+*/
+
+/* Root Application Style */
+.root {
+    -fx-background-color: #1C1C1C;
+    -fx-font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== CALCULATOR MAIN PAGE STYLES ===== */
+
+/* Calculator Container */
+.calculator-container {
+    -fx-background-color: #1C1C1C;
+    -fx-spacing: 10;
+}
+
+/* Display Area */
+.calculator-display {
+    -fx-background-color: #1C1C1C;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 48px;
+    -fx-font-weight: 300;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 24 16 24 16;
+    -fx-alignment: center-right;
+}
+
+/* ===== CALCULATOR BUTTON STYLES ===== */
+
+/* Base Button Style */
+Button {
+    -fx-min-height: 68px;
+    -fx-min-width: 80px;
+    -fx-border-width: 0;
+    -fx-background-radius: 14;
+    -fx-font-size: 24px;
+    -fx-font-weight: 500;
+    -fx-cursor: hand;
+}
+
+Button:hover {
+    -fx-opacity: 0.85;
+}
+
+Button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Number Buttons (0-9, ., 00) */
+.number-button {
+    -fx-background-color: #333333;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 24px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 14;
+}
+
+.number-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.number-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Operator Buttons (+, -, ×, ÷) */
+.operator-button {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 28px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 14;
+}
+
+.operator-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.operator-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Function Buttons (√, x², %, (, ), ±, ⌫) */
+.function-button {
+    -fx-background-color: #505050;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 14;
+}
+
+.function-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.function-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Clear Button (C) */
+.clear-button {
+    -fx-background-color: #FF5252;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 24px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 14;
+}
+
+.clear-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.clear-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Equals Button (=) */
+.equals-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 28px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 14;
+}
+
+.equals-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.equals-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ===== HISTORY PAGE STYLES ===== */
+
+/* History Container */
+.history-container {
+    -fx-background-color: #1C1C1C;
+}
+
+/* History Toolbar Section */
+.history-container .title-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20px;
+    -fx-font-weight: 500;
+}
+
+/* History Buttons */
+.history-container .primary-button {
+    -fx-background-color: #505050;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.history-container .primary-button:hover {
+    -fx-background-color: #606060;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.history-container .primary-button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.history-container .danger-button {
+    -fx-background-color: #FF5252;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.history-container .danger-button:hover {
+    -fx-background-color: #FF6B6B;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.history-container .danger-button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* History Table */
+.history-container .table-view {
+    -fx-background-color: #1C1C1C;
+    -fx-border-color: #333333;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.history-container .table-view .column-header {
+    -fx-background-color: #505050;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 12 8;
+    -fx-alignment: center-left;
+}
+
+.history-container .table-view .column-header-background {
+    -fx-background-color: #505050;
+}
+
+.history-container .table-view .column-header .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.history-container .table-view .filler {
+    -fx-background-color: #505050;
+}
+
+.history-container .table-view .table-row-cell {
+    -fx-background-color: #333333;
+    -fx-text-fill: #FFFFFF;
+    -fx-cell-size: 45;
+    -fx-padding: 0;
+}
+
+.history-container .table-view .table-row-cell:odd {
+    -fx-background-color: #2A2A2A;
+}
+
+.history-container .table-view .table-row-cell:hover {
+    -fx-background-color: #3D3D3D;
+}
+
+.history-container .table-view .table-row-cell:selected {
+    -fx-background-color: #505050;
+    -fx-text-fill: #FFFFFF;
+}
+
+.history-container .table-view .table-cell {
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 8 12;
+    -fx-alignment: center-left;
+    -fx-font-size: 13px;
+}
+
+/* Result Column - Green highlight */
+.history-container .table-view .result-column .table-cell {
+    -fx-text-fill: #4CAF50;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Action Column - Center aligned */
+.history-container .table-view .action-column .table-cell {
+    -fx-alignment: center;
+    -fx-padding: 4;
+}
+
+/* Delete Button inside Table */
+.history-container .table-view .table-cell Button {
+    -fx-background-color: #FF5252;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+    -fx-min-width: 70px;
+    -fx-min-height: 30px;
+}
+
+.history-container .table-view .table-cell Button:hover {
+    -fx-background-color: #FF6B6B;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.history-container .table-view .table-cell Button:pressed {
+    -fx-background-color: #E04040;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Empty Table Placeholder */
+.history-container .table-view .placeholder .label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+}
+
+/* History Button in Calculator */
+.history-button {
+    -fx-background-color: #505050;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+}
+
+.history-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.history-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ===== VAULT PAGE STYLES ===== */
+
+/* Vault Container */
+.vault-container {
+    -fx-background-color: #2C2C3E;
+}
+
+/* Vault Title */
+.vault-container .title-label {
+    -fx-text-fill: #4DD0E1;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+/* Vault Table */
+.vault-container .table-view {
+    -fx-background-color: #3A3A52;
+    -fx-border-color: #5A9FD4;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.vault-container .table-view .column-header {
+    -fx-background-color: #4A5F7F;
+    -fx-text-fill: #E8F4F8;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.vault-container .table-view .column-header-background {
+    -fx-background-color: #4A5F7F;
+}
+
+.vault-container .table-view .table-row-cell {
+    -fx-background-color: #3A3A52;
+    -fx-text-fill: #FFFFFF;
+}
+
+.vault-container .table-view .table-row-cell:odd {
+    -fx-background-color: #444462;
+}
+
+.vault-container .table-view .table-row-cell:selected {
+    -fx-background-color: #6B5B95;
+    -fx-text-fill: #FFFFFF;
+}
+
+.vault-container .table-view .table-row-cell:hover {
+    -fx-background-color: #505070;
+}
+
+.vault-container .table-view .table-cell {
+    -fx-text-fill: #F0F0F0;
+    -fx-padding: 10;
+    -fx-font-size: 13px;
+}
+
+/* Vault Action Buttons */
+.vault-container .primary-button {
+    -fx-background-color: #5A9FD4;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+    -fx-min-width: 130px;
+}
+
+.vault-container .primary-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.vault-container .primary-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.vault-container .primary-button:disabled {
+    -fx-background-color: #4A4A4A;
+    -fx-text-fill: #888888;
+    -fx-opacity: 0.5;
+}
+
+/* Vault Secondary Buttons (Change PIN, Lock) */
+.vault-container .secondary-button {
+    -fx-background-color: #7B68A6;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+    -fx-min-width: 110px;
+}
+
+.vault-container .secondary-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.vault-container .secondary-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Vault Danger Button (Delete) */
+.vault-container .danger-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+    -fx-min-width: 130px;
+}
+
+.vault-container .danger-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.vault-container .danger-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.vault-container .danger-button:disabled {
+    -fx-background-color: #4A4A4A;
+    -fx-text-fill: #888888;
+    -fx-opacity: 0.5;
+}
+
+/* ===== PIN SETUP PAGE STYLES ===== */
+
+/* PIN Setup Container */
+.pin-setup-container {
+    -fx-background-color: #2C2C3E;
+    -fx-spacing: 15;
+}
+
+/* PIN Setup Title */
+.pin-setup-container .subtitle-label {
+    -fx-text-fill: #4DD0E1;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* PIN Setup Text Fields */
+.pin-setup-container TextField,
+.pin-setup-container PasswordField {
+    -fx-background-color: #3A3A52;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #B8B8D1;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8;
+    -fx-border-color: #5A9FD4;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+.pin-setup-container TextField:focused,
+.pin-setup-container PasswordField:focused {
+    -fx-border-color: #6BB6DF;
+    -fx-border-width: 2;
+}
+
+/* PIN Setup Submit Button */
+.pin-setup-container .success-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 12 24;
+    -fx-cursor: hand;
+}
+
+.pin-setup-container .success-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.pin-setup-container .success-button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ===== GENERAL UI ELEMENTS ===== */
+
+/* Labels */
+Label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.title-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Text Fields & Password Fields (General) */
+TextField, PasswordField {
+    -fx-background-color: #3A3A52;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #B8B8D1;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8;
+    -fx-border-color: #5A9FD4;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+TextField:focused, PasswordField:focused {
+    -fx-border-color: #6BB6DF;
+    -fx-border-width: 2;
+}
+
+/* Scrollbar Styling */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #5A9FD4;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #6BB6DF;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #3A3A52;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .increment-button, 
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+/* ===== COLOR REFERENCE CHART ===== */
+/*
+Element              | Hex Color | Usage
+---------------------|-----------|----------------------------------
+Calculator BG        | #1C1C1C   | Calculator & History background
+Number Buttons       | #333333   | Number buttons, History cards
+Function Buttons     | #505050   | Function buttons, History toolbar
+Operator Buttons     | #FF9800   | Operator buttons (+, -, ×, ÷)
+Equals Button        | #4CAF50   | Equals button, Result text
+Clear Button         | #FF5252   | Clear button, Delete icons
+Button Text          | #FFFFFF   | All button text, Display text
+Secondary Text       | #888888   | Secondary text, Dates
+Vault BG             | #1A1A2E   | Vault background
+Vault Cards          | #16213E   | Vault cards
+Vault Toolbar        | #0F3460   | Vault toolbar
+Vault Buttons        | #533483   | Vault action buttons
+Vault Accent         | #00D9FF   | Vault accent (Cyan)
+*/
